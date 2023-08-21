@@ -33,7 +33,7 @@ func main() {
 
 func add(hostsFilePath string, domains []string) {
 	// Open the hosts file for writing
-	f, err := os.OpenFile(hostsFilePath, os.O_APPEND, 0644)
+	f, err := os.OpenFile(hostsFilePath, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Error opening hosts file:", err)
 		return
